@@ -1,7 +1,12 @@
+import Base from "./components/base";
 import "./App.css";
 
 function App() {
-  return <h1>สวัสดีชาวโลก</h1>;
+  return (
+    <div className="w-full h-screen">
+      <Base />
+    </div>
+  );
 }
 
 export default App;
