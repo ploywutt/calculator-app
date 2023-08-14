@@ -3,7 +3,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-fix flex flex-col justify-center items-center">
       <Calculate />
     </div>
   );

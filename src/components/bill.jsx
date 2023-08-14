@@ -11,7 +11,7 @@ function Bill({ inputValue, setInputValue }) {
   };
 
   return (
-    <div className="flex flex-col gap-2 w-full p-7 relative">
+    <div className="flex flex-col gap-2 w-full pb-7 relative">
       <p className="text-sm">Bill</p>
       <input
         type="number"
@@ -22,7 +22,7 @@ function Bill({ inputValue, setInputValue }) {
         hover:outline-none hover:ring-[2px] hover:ring-[#26c0ab]
         focus:outline-none focus:ring-[2px] focus:ring-[#26c0ab]"
       />
-      <span className="flex absolute left-9 top-[60px] bg-transparent rounded text-base p-2">
+      <span className="flex absolute left-3 top-[31px] bg-transparent rounded text-base p-2">
         <img src={dollar} alt="icon-dollar" />
       </span>
     </div>

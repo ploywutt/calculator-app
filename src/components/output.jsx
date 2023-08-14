@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 function Output({ tipAmount, totalAmount }) {
   return (
-    <div className="flex flex-col gap-6 w-[88%] p-6 bg-[#00494d] rounded-[15px]">
+    <div className="flex flex-col gap-6 ">
       <div className="flex justify-between">
         <div>
           <p className="text-sm text-white">Tip Amount</p>
@@ -10,7 +10,7 @@ function Output({ tipAmount, totalAmount }) {
         </div>
         <div className="text-[28px] text-[#26c0ab]">${tipAmount}</div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between lg:pb-[105px]">
         <div>
           <p className="text-sm text-white">Total</p>
           <p className="text-xs text-[#5e7a7d]">/ person</p>

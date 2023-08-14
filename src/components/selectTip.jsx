@@ -25,9 +25,12 @@ function SelectTip({
   };
 
   return (
-    <div className="flex flex-col gap-3 w-full px-7 py-1">
+    <div className="flex flex-col gap-3 w-full py-1">
       <p className="text-sm">Select Tip %</p>
-      <div className="grid grid-cols-2 gap-4">
+      <div
+        className="grid grid-cols-2 gap-4
+      lg:grid-cols-3"
+      >
         {data.map((item, index) => {
           return (
             <button
@@ -35,7 +38,7 @@ function SelectTip({
               onClick={() => {
                 handleClick(item.value);
               }}
-              className="h-10 rounded bg-[#00494d] text-white text-[20px] hover:bg-[#c5e4e7] hover:text-[#00494d] focus:bg-[#26c0ab]"
+              className="h-10 rounded bg-[#00494d] text-white text-[20px] hover:bg-[#c5e4e7] hover:text-[#00494d] focus:bg-[#26c0ab] focus:duration-1000"
             >
               {item.percent}
             </button>

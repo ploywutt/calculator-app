@@ -35,20 +35,27 @@ function Calculate() {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center item-center w-full h-1/6">
+      <div className="py-10 lg:pt-24 lg:pb-16">
         <h2 className="text-xl">
           S P L I
           <br />T T E R
         </h2>
       </div>
-      <div className="flex flex-col justify-start items-center item-center w-full h-5/6 bg-white rounded-t-2xl">
-        <Bill {...{ inputValue, setInputValue }} />
-        <SelectTip
-          {...{ percentClick, setPercentClick }}
-          {...{ percentType, setPercentType }}
-        />
-        <NumberPeople {...{ peopleInput, setPeopleInput }} />
-        <Output tipAmount={tipAmount} totalAmount={totalAmount} />
+      <div
+        className="flex flex-col justify-start items-center w-full h-[100%] bg-white rounded-t-2xl p-7
+      lg:flex-row lg:h-[4%] lg:w-[50%] lg:rounded-xl lg:gap-7 lg:p-8"
+      >
+        <div className="w-full lg:w-[130%]">
+          <Bill {...{ inputValue, setInputValue }} />
+          <SelectTip
+            {...{ percentClick, setPercentClick }}
+            {...{ percentType, setPercentType }}
+          />
+          <NumberPeople {...{ peopleInput, setPeopleInput }} />
+        </div>
+        <div className="w-full h-full p-6 bg-[#00494d] rounded-[15px] lg:h-full">
+          <Output tipAmount={tipAmount} totalAmount={totalAmount} />
+        </div>
       </div>
     </>
   );

@@ -15,15 +15,15 @@ function NumberPeople({ peopleInput, setPeopleInput }) {
       setErrorMessage("");
     } else if (inputValue === "0") {
       setErrorMessage("Can't be zero");
-      setPeopleInput("");
+      setPeopleInput(undefined);
     } else {
-      setPeopleInput("");
+      setPeopleInput(undefined);
       setErrorMessage("");
     }
   };
 
   return (
-    <div className="flex flex-col relative gap-2 w-full p-6">
+    <div className="flex flex-col relative gap-2 w-full py-7 lg:py-0 lg:pt-7 ">
       <div className="flex justify-between">
         <div className="text-sm">Number of People</div>
         <div className="text-sm text-red-500">{errorMessage}</div>
@@ -37,7 +37,7 @@ function NumberPeople({ peopleInput, setPeopleInput }) {
       hover:outline-none hover:ring-[2px] hover:ring-[#26c0ab]
       focus:outline-none focus:ring-[2px] focus:ring-[#26c0ab]"
       />
-      <span className="flex absolute left-8 top-[56px] bg-transparent rounded text-base p-2">
+      <span className="flex absolute left-3 top-[60px] bg-transparent rounded text-base p-2">
         <img src={logo} alt="icon-person" />
       </span>
     </div>
