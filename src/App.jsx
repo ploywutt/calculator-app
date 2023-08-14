@@ -1,10 +1,10 @@
-import Base from "./components/base";
+import Calculate from "./components/calculate";
 import "./App.css";
 
 function App() {
   return (
     <div className="w-full h-screen">
-      <Base />
+      <Calculate />
     </div>
   );
 }
