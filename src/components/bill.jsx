@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 function Bill({ inputValue, setInputValue }) {
   console.log("input", inputValue);
+  console.log(typeof inputValue);
 
   const handleInputChange = (event) => {
     if (event.target.value > 0) {
@@ -30,7 +31,7 @@ function Bill({ inputValue, setInputValue }) {
 }
 
 Bill.propTypes = {
-  inputValue: PropTypes.number,
+  inputValue: PropTypes.string,
   setInputValue: PropTypes.func,
 };
 

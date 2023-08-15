@@ -9,6 +9,8 @@ function SelectTip({
 }) {
   console.log("percentClick", percentClick);
   console.log("percentChange", percentType);
+  console.log(typeof percentClick);
+  console.log(typeof percentType);
 
   const handleClick = (e) => {
     setPercentClick(e);
@@ -16,7 +18,7 @@ function SelectTip({
   };
 
   const handleInputChange = (event) => {
-    if (event.target.value <= 100 && event.target.value > 0) {
+    if (event.target.value <= 1000 && event.target.value > 0) {
       setPercentType(Number(event.target.value));
       setPercentClick(0);
     } else if (event.target.value < 1) {
@@ -38,7 +40,7 @@ function SelectTip({
               onClick={() => {
                 handleClick(item.value);
               }}
-              className="h-10 rounded bg-[#00494d] text-white text-[20px] hover:bg-[#c5e4e7] hover:text-[#00494d] focus:bg-[#26c0ab] focus:duration-1000"
+              className="h-10 rounded bg-[#00494d] text-white text-[20px] hover:bg-[#c5e4e7] hover:text-[#00494d] focus:bg-[#26c0ab] focus:text-[#00494d] focus:duration-1000"
             >
               {item.percent}
             </button>
@@ -50,7 +52,7 @@ function SelectTip({
           placeholder="Custom"
           onChange={handleInputChange}
           value={percentType}
-          className="h-10 rounded p-4 bg-[#f4fafa] text-center placeholder:px-2 text-[20px] text-[#00494d] placeholder:text-[#5e7a7d]
+          className="h-10 rounded p-2 bg-[#f4fafa] text-center placeholder:px-2 text-[20px] text-[#00494d] placeholder:text-[#5e7a7d]
               hover:outline-none hover:ring-[2px] hover:ring-[#26c0ab]
               focus:outline-none focus:ring-[2px] focus:ring-[#26c0ab]"
         />
@@ -62,7 +64,7 @@ function SelectTip({
 SelectTip.propTypes = {
   percentClick: PropTypes.number,
   setPercentClick: PropTypes.func,
-  percentType: PropTypes.number,
+  percentType: PropTypes.string,
   setPercentType: PropTypes.func,
 };
 

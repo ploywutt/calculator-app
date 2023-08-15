@@ -4,6 +4,7 @@ import { useState } from "react";
 
 function NumberPeople({ peopleInput, setPeopleInput }) {
   console.log("peopleInput", peopleInput);
+  console.log(typeof peopleInput);
 
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -33,9 +34,11 @@ function NumberPeople({ peopleInput, setPeopleInput }) {
         placeholder="0"
         onChange={handleInputChange}
         value={peopleInput}
-        className="w-full p-4 h-10 rounded bg-[#f4fafa] text-end text-[24px] text-[#00494d] placeholder-px-2
-      hover:outline-none hover:ring-[2px] hover:ring-[#26c0ab]
-      focus:outline-none focus:ring-[2px] focus:ring-[#26c0ab]"
+        className={`w-full p-4 h-10 rounded bg-[#f4fafa] text-end text-[24px] text-[#00494d] placeholder-px-2 ${
+          errorMessage === "Can't be zero"
+            ? "focus:outline-none focus:ring-[2px] focus:ring-red-500"
+            : "hover:outline-none hover:ring-[2px] hover:ring-[#26c0ab] focus:outline-none focus:ring-[2px] focus:ring-[#26c0ab]"
+        }`}
       />
       <span className="flex absolute left-3 top-[60px] bg-transparent rounded text-base p-2">
         <img src={logo} alt="icon-person" />
@@ -45,7 +48,7 @@ function NumberPeople({ peopleInput, setPeopleInput }) {
 }
 
 NumberPeople.propTypes = {
-  peopleInput: PropTypes.number,
+  peopleInput: PropTypes.string,
   setPeopleInput: PropTypes.func,
 };
 
