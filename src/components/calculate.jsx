@@ -12,6 +12,7 @@ function Calculate() {
   const [peopleInput, setPeopleInput] = useState();
   const [tipAmount, setTipAmount] = useState();
   const [totalAmount, setTotalAmount] = useState();
+  const [reset, setReset] = useState();
 
   useEffect(() => {
     if (inputValue !== undefined && peopleInput !== undefined) {
@@ -54,7 +55,11 @@ function Calculate() {
           <NumberPeople {...{ peopleInput, setPeopleInput }} />
         </div>
         <div className="w-full h-full p-6 bg-[#00494d] rounded-[15px] lg:h-full">
-          <Output tipAmount={tipAmount} totalAmount={totalAmount} />
+          <Output
+            tipAmount={tipAmount}
+            totalAmount={totalAmount}
+            {...{ reset, setReset }}
+          />
         </div>
       </div>
     </>

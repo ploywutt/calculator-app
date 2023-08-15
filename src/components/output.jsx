@@ -1,6 +1,10 @@
 import PropTypes from "prop-types";
 
-function Output({ tipAmount, totalAmount }) {
+function Output({ tipAmount, totalAmount, setReset }) {
+  const handleReset = () => {
+    setReset();
+  };
+
   return (
     <div className="flex flex-col gap-6 ">
       <div className="flex justify-between">
@@ -17,7 +21,10 @@ function Output({ tipAmount, totalAmount }) {
         </div>
         <div className="text-[28px] text-[#26c0ab]">${totalAmount}</div>
       </div>
-      <button className="h-10 rounded bg-[#5e7a7d] text-[#00494d] hover:bg-[#c5e4e7] focus:bg-[#26c0ab]">
+      <button
+        onClick={handleReset}
+        className="h-10 rounded bg-[#5e7a7d] text-[#00494d] hover:bg-[#c5e4e7] focus:bg-[#26c0ab]"
+      >
         RESET
       </button>
     </div>
@@ -27,6 +34,7 @@ function Output({ tipAmount, totalAmount }) {
 Output.propTypes = {
   tipAmount: PropTypes.string,
   totalAmount: PropTypes.string,
+  setReset: PropTypes.func,
 };
 
 export default Output;
